@@ -12,6 +12,9 @@ Plug 'itchyny/lightline.vim'
 " Unmanaged plugin (manually installed and updated)
 Plug '~/my-prototype-plugin'
 
+" Tender vim
+Plug 'jacoborus/tender.vim'
+
 " Initialize plugin system
 call plug#end()
 
@@ -20,6 +23,18 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
+let g:airline_theme = 'tender'
+
+" Config for Tender
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+syntax enable
+colorscheme tender
+let g:lightline = { 'colorscheme': 'tender' }
 
 " Set shift width to 4 spaces.
 set shiftwidth=4
@@ -58,7 +73,7 @@ set history=1000
 
 set relativenumber
 set encoding=UTF-8    
-set mouse=a
+set mouse-=a
  
 " Disable arrow keys
 noremap <Up> <Nop>
